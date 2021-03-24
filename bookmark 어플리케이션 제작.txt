@@ -1,0 +1,5 @@
+1. settings.py 파일 수정 (7가지)
+2. ch99폴더에서 python3 manage.py migrate
+3. python manage.py startapp bookmark
+4. settings.py 파일 수정
+  - INSTALLED_APPS 내용 추가
