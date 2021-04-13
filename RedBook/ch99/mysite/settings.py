@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bookmark.apps.BookmarkConfig',  # 추가
+    'blog.apps.BlogConfig',  # 추가
 ]
 
 MIDDLEWARE = [
