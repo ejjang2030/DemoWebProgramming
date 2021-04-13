@@ -17,9 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 
 from bookmark.views import BookmarkLV, BookmarkDV
+from mysite.views import HomeView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    #ejjang
+    path('', HomeView.as_view(), name='home'), # 추가
     path('bookmark/', include('bookmark.urls')),  # 추가
     path('blog/', include('blog.urls')),  # 추가
 
