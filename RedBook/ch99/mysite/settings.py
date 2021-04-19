@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bookmark.apps.BookmarkConfig',  # 추가
     'blog.apps.BlogConfig',  # 추가
+    'taggit.apps.TaggitAppConfig',  # 추가
+    'taggit_templatetags2',  # 추가
 ]
 
 MIDDLEWARE = [
@@ -106,8 +108,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-# LANGUAGE_CODE = 'en-us'
-LANGUAGE_CODE = 'ko-kr'
+LANGUAGE_CODE = 'en-us'
+# LANGUAGE_CODE = 'ko-kr'
 
 # TIME_ZONE = 'UTC'
 TIME_ZONE = 'Asia/Seoul'
@@ -129,3 +131,5 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+TAGGIT_CASE_INSENSITIVE = True  # 추가
+TAGGIT_LIMIT = 50  # 추가
