@@ -8,9 +8,12 @@ from django.views.generic.dates import DayArchiveView, TodayArchiveView
 
 from blog.models import Post
 
+from django.conf import settings
+
 # Create your views here.
 
-#--- ListView
+
+# --- ListView
 class PostLV(ListView):
     model = Post
     template_name = 'blog/post_all.html'
@@ -18,9 +21,18 @@ class PostLV(ListView):
     paginate_by = 2
 
 
-#--- DetailView
+# --- DetailView
 class PostDV(DetailView):
     model = Post
+
+    # 아래 메소드 추가
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['disqus_short'] = f"{settings.DISQUS_SHORTNAME}"
+        context['disqus_id'] = f"post-{self.object.id}-{self.object.slug}"
+        context['disqus_url'] = f"{settings.DISQUS_MY_DOMAIN}{self.object.get_absolute_url()}"
+        context['disqus_title'] = f"{self.object.slug}"
+        return context
 
 
 # --- ArchiveView
