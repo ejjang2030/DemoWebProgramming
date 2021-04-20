@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'widget_tweaks',  # 추가
     'bookmark.apps.BookmarkConfig',  # 추가
     'blog.apps.BlogConfig',  # 추가
     'taggit.apps.TaggitAppConfig',  # 추가
@@ -137,3 +138,7 @@ TAGGIT_LIMIT = 50  # default=10
 
 DISQUS_SHORTNAME = 'pydjango-web-programming-eunjae'
 DISQUS_MY_DOMAIN = 'http://127.0.0.1:8000'
+
+# LOGIN_URL = '/accounts/login/'
+LOGIN_REDIRECT_URL = '/'
+

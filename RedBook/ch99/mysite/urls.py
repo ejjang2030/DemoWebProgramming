@@ -21,9 +21,14 @@ from mysite.views import HomeView
 
 from django.conf.urls.static import static
 from django.conf import settings
+from mysite.views import UserCreateView, UserCreateDoneTV
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/register/', UserCreateView.as_view(), name='register'),
+    path('accounts/register/done/', UserCreateDoneTV.as_view(), name='register_done'),
     #ejjang
     path('', HomeView.as_view(), name='home'), # 추가
     path('bookmark/', include('bookmark.urls')),  # 추가
