@@ -19,14 +19,18 @@ from django.urls import path, include
 from bookmark.views import BookmarkLV, BookmarkDV
 from mysite.views import HomeView
 
+from django.conf.urls.static import static
+from django.conf import settings
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     #ejjang
     path('', HomeView.as_view(), name='home'), # 추가
     path('bookmark/', include('bookmark.urls')),  # 추가
     path('blog/', include('blog.urls')),  # 추가
+    path('photo/', include('photo.urls')),  # 추가
 
     # class-based views
     # path('bookmark/', BookmarkLV.as_view(), name='index'),
     # path('bookmark/<int:pk>/', BookmarkDV.as_view(), name='detail'),
-]
+] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)  # 추가
