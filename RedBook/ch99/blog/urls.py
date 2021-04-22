@@ -43,6 +43,9 @@ urlpatterns = [
     path('change/', views.PostChangeLV.as_view(), name="change",),
 
     # Example: /blog/99/update/
-    path('<int:pk>/update/', views.PostDeleteView.as_view(), name="delete",),
+    path('<int:pk>/update/', views.PostUpdateView.as_view(), name="update",),
+
+    # Example: /blog/99/delete/
+    path('<int:pk>/delete/', views.PostDeleteView.as_view(), name="delete",),
 
 ]
