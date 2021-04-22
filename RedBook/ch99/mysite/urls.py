@@ -30,7 +30,7 @@ urlpatterns = [
     path('accounts/register/', UserCreateView.as_view(), name='register'),
     path('accounts/register/done/', UserCreateDoneTV.as_view(), name='register_done'),
     #ejjang
-    path('', HomeView.as_view(), name='home'), # 추가
+    path('', HomeView.as_view(), name='home'),  # 추가
     path('bookmark/', include('bookmark.urls')),  # 추가
     path('blog/', include('blog.urls')),  # 추가
     path('photo/', include('photo.urls')),  # 추가
